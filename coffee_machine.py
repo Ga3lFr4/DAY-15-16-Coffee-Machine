@@ -18,6 +18,6 @@ while is_on:
         money_machine.report()
     else:
         drink = menu.find_drink(choice)
-        coffee_maker.is_resource_sufficient(drink)
-        money_machine.make_payment(drink.cost)
-        coffee_maker.make_coffee(drink)
+        if coffee_maker.is_resource_sufficient(drink):
+            money_machine.make_payment(drink.cost)
+            coffee_maker.make_coffee(drink)
